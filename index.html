@@ -57,7 +57,7 @@ body {
 .bush span:nth-child(4){ left:155px; bottom:18px; }
 .bush span:nth-child(5){ left:200px; bottom:0; }
 
-/* CAULES PRETOS (RISCOS) */
+/* CAULE PRETO */
 .stem {
     position: absolute;
     bottom: 95px;
@@ -68,27 +68,15 @@ body {
     transform-origin: bottom;
 }
 
-/* ESQUERDA */
-.stem.left {
-    left: 90px;
-    transform: rotate(-25deg);
-}
-
-/* CENTRO */
-.stem.center {
-    left: 125px;
-}
-
-/* DIREITA */
-.stem.right {
-    left: 160px;
-    transform: rotate(25deg);
-}
+/* VARIAÇÕES */
+.stem.left  { left: 95px;  transform: rotate(-25deg); }
+.stem.center{ left: 125px; }
+.stem.right { left: 155px; transform: rotate(25deg); }
 
 /* 🌷 TULIPA */
 .tulip {
     position: absolute;
-    top: -85px;
+    top: -90px;
     left: 50%;
     transform: translateX(-50%);
     width: 90px;
@@ -103,9 +91,9 @@ body {
     border-radius: 20px 20px 8px 8px;
 }
 
-.tulip .petal.left { left:0; transform: rotate(-8deg); }
+.tulip .petal.left   { left:0; transform: rotate(-8deg); }
 .tulip .petal.center { left:25px; background:#ff5a5a; z-index:2; }
-.tulip .petal.right { right:0; transform: rotate(8deg); }
+.tulip .petal.right  { right:0; transform: rotate(8deg); }
 
 /* FLORES PEQUENAS */
 .small-flower {
@@ -138,17 +126,32 @@ body {
     <div class="small-flower" style="left:-20px; bottom:135px;"></div>
     <div class="small-flower" style="left:260px; bottom:145px;"></div>
 
-    <!-- RISCOS PRETOS -->
-    <div class="stem left"></div>
-    <div class="stem center">
-        <!-- TULIPA -->
+    <!-- CAULE + FLOR ESQUERDA -->
+    <div class="stem left">
         <div class="tulip">
             <div class="petal left"></div>
             <div class="petal center"></div>
             <div class="petal right"></div>
         </div>
     </div>
-    <div class="stem right"></div>
+
+    <!-- CAULE + FLOR CENTRO -->
+    <div class="stem center">
+        <div class="tulip">
+            <div class="petal left"></div>
+            <div class="petal center"></div>
+            <div class="petal right"></div>
+        </div>
+    </div>
+
+    <!-- CAULE + FLOR DIREITA -->
+    <div class="stem right">
+        <div class="tulip">
+            <div class="petal left"></div>
+            <div class="petal center"></div>
+            <div class="petal right"></div>
+        </div>
+    </div>
 
 </div>
 
