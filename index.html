@@ -57,66 +57,55 @@ body {
 .bush span:nth-child(4){ left:155px; bottom:18px; }
 .bush span:nth-child(5){ left:200px; bottom:0; }
 
-/* SILHUETA PRETA (RISCOS) */
-.shadow-stem {
+/* 🌱 CAULE PRETO (ÚNICO) */
+.stem {
     position: absolute;
     bottom: 95px;
-    width: 14px;
+    width: 12px;
     height: 260px;
     background: #000;
     border-radius: 10px;
     transform-origin: bottom;
-}
-
-/* CAULE VERDE */
-.stem {
-    position: absolute;
-    bottom: 95px;
-    width: 6px;
-    height: 250px;
-    background: linear-gradient(#3cb371, #1f7a52);
-    border-radius: 5px;
-    transform-origin: bottom;
     animation: grow 2.2s ease-out forwards;
 }
 
-/* POSIÇÕES (mais próximas) */
-.left  { left: 110px; transform: rotate(-18deg); }
-.center{ left: 130px; }
-.right { left: 150px; transform: rotate(18deg); }
+/* POSIÇÕES */
+.left  { left: 118px; transform: rotate(-20deg); }
+.center{ left: 132px; }
+.right { left: 146px; transform: rotate(20deg); }
 
 /* FOLHAS */
 .leaf {
     position: absolute;
-    width: 36px;
-    height: 18px;
+    width: 34px;
+    height: 16px;
     background: #3cb371;
     border-radius: 100% 0;
 }
 
-.leaf.left  { left:-28px; transform: rotate(-25deg); }
-.leaf.right { right:-28px; transform: rotate(205deg); }
+.leaf.left  { left:-26px; transform: rotate(-25deg); }
+.leaf.right { right:-26px; transform: rotate(205deg); }
 
-/* 🌷 TULIPA */
+/* 🌷 TULIPA (COLADA NO TOPO DO CAULE) */
 .tulip {
     position: absolute;
-    top: -90px;
+    top: -85px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
 }
 
 .tulip .petal {
     position: absolute;
-    width: 40px;
-    height: 90px;
+    width: 38px;
+    height: 85px;
     background: #ff2b2b;
     border-radius: 20px 20px 8px 8px;
 }
 
 .tulip .petal.left   { left:0; transform: rotate(-8deg); }
-.tulip .petal.center { left:25px; background:#ff5a5a; z-index:2; }
+.tulip .petal.center { left:23px; background:#ff5a5a; z-index:2; }
 .tulip .petal.right  { right:0; transform: rotate(8deg); }
 
 /* FLORES PEQUENAS */
@@ -133,7 +122,7 @@ body {
         0 -9px #ffd966;
 }
 
-/* ANIMAÇÃO DE CRESCIMENTO */
+/* CRESCIMENTO */
 @keyframes grow {
     from {
         transform: translateY(180px) scaleY(0);
@@ -161,11 +150,6 @@ body {
     <!-- FLORES PEQUENAS -->
     <div class="small-flower" style="left:-20px; bottom:135px;"></div>
     <div class="small-flower" style="left:260px; bottom:145px;"></div>
-
-    <!-- SOMBRAS -->
-    <div class="shadow-stem left"></div>
-    <div class="shadow-stem center"></div>
-    <div class="shadow-stem right"></div>
 
     <!-- ESQUERDA -->
     <div class="stem left">
