@@ -57,21 +57,45 @@ body {
 .bush span:nth-child(4){ left:155px; bottom:18px; }
 .bush span:nth-child(5){ left:200px; bottom:0; }
 
-/* CAULE PRETO */
-.stem {
+/* SILHUETA PRETA (RISCOS) */
+.shadow-stem {
     position: absolute;
     bottom: 95px;
-    width: 12px;
+    width: 14px;
     height: 260px;
     background: #000;
     border-radius: 10px;
     transform-origin: bottom;
 }
 
-/* VARIAÇÕES */
-.stem.left  { left: 95px;  transform: rotate(-25deg); }
-.stem.center{ left: 125px; }
-.stem.right { left: 155px; transform: rotate(25deg); }
+/* CAULE VERDE */
+.stem {
+    position: absolute;
+    bottom: 95px;
+    width: 6px;
+    height: 250px;
+    background: linear-gradient(#3cb371, #1f7a52);
+    border-radius: 5px;
+    transform-origin: bottom;
+    animation: grow 2.2s ease-out forwards;
+}
+
+/* POSIÇÕES (mais próximas) */
+.left  { left: 110px; transform: rotate(-18deg); }
+.center{ left: 130px; }
+.right { left: 150px; transform: rotate(18deg); }
+
+/* FOLHAS */
+.leaf {
+    position: absolute;
+    width: 36px;
+    height: 18px;
+    background: #3cb371;
+    border-radius: 100% 0;
+}
+
+.leaf.left  { left:-28px; transform: rotate(-25deg); }
+.leaf.right { right:-28px; transform: rotate(205deg); }
 
 /* 🌷 TULIPA */
 .tulip {
@@ -108,6 +132,18 @@ body {
         0 9px #ffd966,
         0 -9px #ffd966;
 }
+
+/* ANIMAÇÃO DE CRESCIMENTO */
+@keyframes grow {
+    from {
+        transform: translateY(180px) scaleY(0);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scaleY(1);
+        opacity: 1;
+    }
+}
 </style>
 </head>
 
@@ -126,8 +162,14 @@ body {
     <div class="small-flower" style="left:-20px; bottom:135px;"></div>
     <div class="small-flower" style="left:260px; bottom:145px;"></div>
 
-    <!-- CAULE + FLOR ESQUERDA -->
+    <!-- SOMBRAS -->
+    <div class="shadow-stem left"></div>
+    <div class="shadow-stem center"></div>
+    <div class="shadow-stem right"></div>
+
+    <!-- ESQUERDA -->
     <div class="stem left">
+        <div class="leaf left" style="top:55%"></div>
         <div class="tulip">
             <div class="petal left"></div>
             <div class="petal center"></div>
@@ -135,8 +177,10 @@ body {
         </div>
     </div>
 
-    <!-- CAULE + FLOR CENTRO -->
+    <!-- CENTRO -->
     <div class="stem center">
+        <div class="leaf left" style="top:60%"></div>
+        <div class="leaf right" style="top:72%"></div>
         <div class="tulip">
             <div class="petal left"></div>
             <div class="petal center"></div>
@@ -144,8 +188,9 @@ body {
         </div>
     </div>
 
-    <!-- CAULE + FLOR DIREITA -->
+    <!-- DIREITA -->
     <div class="stem right">
+        <div class="leaf right" style="top:55%"></div>
         <div class="tulip">
             <div class="petal left"></div>
             <div class="petal center"></div>
