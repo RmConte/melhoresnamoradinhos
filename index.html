@@ -29,6 +29,7 @@ body {
     font-size: clamp(1.6rem, 5vw, 2.2rem);
     color: #ff8c5a;
     font-weight: bold;
+    z-index: 10;
 }
 
 /* JARDIM */
@@ -42,22 +43,33 @@ body {
     align-items: flex-end;
 }
 
-/* CONJUNTO FLORES */
-.flowers {
+/* PLANTA */
+.plant {
     position: relative;
-    display: flex;
-    gap: 40px; /* CONTROLA O ESPAÇO ENTRE AS FLORES */
-    align-items: flex-end;
-    z-index: 2;
+    animation: grow 4s ease-out forwards;
+    transform-origin: bottom center;
 }
 
-/* CAULE */
-.stem {
-    position: relative;
+/* ANIMAÇÃO DE SUBIR */
+@keyframes grow {
+    from {
+        transform: translateY(120px) scale(0.4);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* CAULE PRINCIPAL */
+.main-stem {
     width: 6px;
     height: 200px;
     background: linear-gradient(#4cd48b, #1f7a52);
     border-radius: 3px;
+    position: relative;
+    margin: 0 auto;
 }
 
 /* FOLHAS */
@@ -67,7 +79,7 @@ body {
     height: 16px;
     background: #3cb371;
     border-radius: 100% 0;
-    top: 110px;
+    top: 120px;
 }
 
 .leaf.left {
@@ -80,20 +92,35 @@ body {
     transform: rotate(205deg);
 }
 
+/* RAMOS */
+.branch {
+    position: absolute;
+    bottom: 100%;
+    width: 4px;
+    height: 90px;
+    background: linear-gradient(#4cd48b, #1f7a52);
+    transform-origin: bottom center;
+}
+
+/* POSIÇÕES DOS RAMOS */
+.branch.left { left: -25px; transform: rotate(-25deg); }
+.branch.center { left: 1px; transform: rotate(0deg); }
+.branch.right { right: -25px; transform: rotate(25deg); }
+
 /* TULIPA */
 .tulip {
     position: absolute;
-    top: -95px;
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
 }
 
 .petal {
     position: absolute;
-    width: 26px;
-    height: 65px;
+    width: 28px;
+    height: 70px;
     background: #e53935;
     border-radius: 50% 50% 40% 40%;
 }
@@ -104,7 +131,7 @@ body {
 }
 
 .petal.center {
-    left: 27px;
+    left: 31px;
     background: #ff5c5c;
     z-index: 1;
 }
@@ -120,7 +147,7 @@ body {
     bottom: 0;
     display: flex;
     justify-content: center;
-    z-index: 1;
+    z-index: -1;
 }
 
 .bush span {
@@ -146,39 +173,41 @@ body {
         <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <!-- FLORES -->
-    <div class="flowers">
+    <!-- PLANTA -->
+    <div class="plant">
 
-        <div class="stem">
+        <div class="main-stem">
             <div class="leaf left"></div>
             <div class="leaf right"></div>
-            <div class="tulip">
-                <div class="petal left"></div>
-                <div class="petal center"></div>
-                <div class="petal right"></div>
-            </div>
-        </div>
 
-        <div class="stem">
-            <div class="leaf left"></div>
-            <div class="leaf right"></div>
-            <div class="tulip">
-                <div class="petal left"></div>
-                <div class="petal center"></div>
-                <div class="petal right"></div>
+            <!-- RAMO ESQUERDO -->
+            <div class="branch left">
+                <div class="tulip">
+                    <div class="petal left"></div>
+                    <div class="petal center"></div>
+                    <div class="petal right"></div>
+                </div>
             </div>
-        </div>
 
-        <div class="stem">
-            <div class="leaf left"></div>
-            <div class="leaf right"></div>
-            <div class="tulip">
-                <div class="petal left"></div>
-                <div class="petal center"></div>
-                <div class="petal right"></div>
+            <!-- RAMO CENTRAL -->
+            <div class="branch center">
+                <div class="tulip">
+                    <div class="petal left"></div>
+                    <div class="petal center"></div>
+                    <div class="petal right"></div>
+                </div>
             </div>
-        </div>
 
+            <!-- RAMO DIREITO -->
+            <div class="branch right">
+                <div class="tulip">
+                    <div class="petal left"></div>
+                    <div class="petal center"></div>
+                    <div class="petal right"></div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 
