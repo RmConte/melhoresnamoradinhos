@@ -1,184 +1,157 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5 meses de namoro</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Feliz 5 meses</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    margin: 0;
     height: 100vh;
-    background: radial-gradient(circle at top, #1c2233, #0b0f1a);
-    overflow: hidden;
+    background: radial-gradient(circle at top, #1c2333, #0b0f1a);
     font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
 }
 
 /* TEXTO */
 .message {
     position: absolute;
-    top: 5vh;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: clamp(1.4rem, 5vw, 2.4rem);
-    color: #ff9f6e;
-    font-weight: bold;
-    z-index: 20;
+    top: 40px;
+    width: 100%;
     text-align: center;
+    font-size: 2rem;
+    color: #ff8c5a;
+    font-weight: bold;
 }
 
-/* CONTAINER PRINCIPAL */
+/* JARDIM */
 .garden {
     position: absolute;
-    bottom: 0;               /* 👈 encostado no chão */
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    animation: growUp 3.5s ease-out forwards;
+    width: 300px;
+    height: 320px;
 }
 
 /* ARBUSTO */
 .bush {
-    position: relative;
-    width: 240px;
-    height: 110px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .bush span {
     position: absolute;
+    bottom: 0;
     width: 90px;
-    height: 90px;
-    background: radial-gradient(circle, #3fa46a, #1e6b47);
+    height: 80px;
+    background: radial-gradient(circle, #3fa36b, #1f6b45);
     border-radius: 50%;
 }
 
-.bush span:nth-child(1){ left:0; bottom:0; }
-.bush span:nth-child(2){ left:45px; bottom:15px; }
-.bush span:nth-child(3){ left:100px; bottom:5px; }
-.bush span:nth-child(4){ left:150px; bottom:20px; }
-.bush span:nth-child(5){ left:190px; bottom:0; }
+.bush span:nth-child(1) { left: -90px; }
+.bush span:nth-child(2) { left: -45px; }
+.bush span:nth-child(3) { left: 0; }
+.bush span:nth-child(4) { left: 45px; }
+.bush span:nth-child(5) { left: 90px; }
 
 /* CAULE */
 .stem {
     position: absolute;
-    bottom: 85px;           /* nasce do arbusto */
-    width: 5px;
+    bottom: 80px;
+    width: 6px;
     height: 200px;
-    background: linear-gradient(#3cb371, #1f7a52);
+    background: linear-gradient(#4cd48b, #1f7a52);
     border-radius: 3px;
 }
+
+/* ESPAÇAMENTO ENTRE FLORES */
+.stem1 { left: 60px; }
+.stem2 { left: 135px; }
+.stem3 { left: 210px; }
 
 /* FOLHAS */
 .leaf {
     position: absolute;
-    width: 34px;
-    height: 18px;
+    width: 30px;
+    height: 16px;
     background: #3cb371;
     border-radius: 100% 0;
+    top: 120px;
 }
 
-.leaf.left { left:-28px; transform: rotate(-25deg); }
-.leaf.right { right:-28px; transform: rotate(205deg); }
+.leaf.left {
+    left: -26px;
+    transform: rotate(-25deg);
+}
 
-/* 🌷 TULIPA */
+.leaf.right {
+    right: -26px;
+    transform: rotate(205deg);
+}
+
+/* TULIPA */
 .tulip {
     position: absolute;
-    top: -86px;
+    top: -90px;
     left: 50%;
     transform: translateX(-50%);
-    width: 84px;
-    height: 86px;
+    width: 80px;
+    height: 80px;
 }
 
-.tulip .petal {
+.petal {
     position: absolute;
-    width: 40px;
-    height: 86px;
-    background: #e63946;
-    border-radius: 16px 16px 6px 6px;
+    width: 26px;
+    height: 65px;
+    background: #e53935;
+    border-radius: 50% 50% 40% 40%;
 }
 
-.tulip .petal.left {
+.petal.left {
     left: 0;
     transform: rotate(-10deg);
 }
 
-.tulip .petal.center {
-    left: 18px;
-    background: #ff6b6b;
-    z-index: 2;
+.petal.center {
+    left: 27px;
+    background: #ff5c5c;
+    z-index: 1;
 }
 
-.tulip .petal.right {
+.petal.right {
     right: 0;
     transform: rotate(10deg);
-}
-
-
-/* GRAMA */
-.grass {
-    position: absolute;
-    bottom: 0;
-    width: 4px;
-    height: 90px;
-    background: #2e8b57;
-    border-radius: 2px;
-}
-
-.grass:nth-child(1){ left:-70px; transform: rotate(-10deg); }
-.grass:nth-child(2){ left:-50px; transform: rotate(6deg); }
-.grass:nth-child(3){ left:260px; transform: rotate(-6deg); }
-.grass:nth-child(4){ left:280px; transform: rotate(12deg); }
-
-/* CORAÇÕES */
-.heart {
-    position: absolute;
-    font-size: 20px;
-    animation: float 6s linear infinite;
-    opacity: 0.85;
-}
-
-/* ANIMAÇÕES */
-@keyframes growUp {
-    from {
-        transform: translateX(-50%) translateY(40px) scale(0.85);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(-50%) translateY(0) scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes float {
-    from { transform: translateY(0) scale(1); opacity:1; }
-    to { transform: translateY(-120vh) scale(1.3); opacity:0; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="message">Feliz 5 meses de namoro meu amor, flores para minha flor🧡🌷</div>
+<div class="message">
+    Feliz 5 meses de namoro meu amor eu te amo muito, flores para minha flor❤️🌷
+</div>
 
 <div class="garden">
-
-    <!-- GRAMA -->
-    <div class="grass"></div>
-    <div class="grass"></div>
-    <div class="grass"></div>
-    <div class="grass"></div>
 
     <!-- ARBUSTO -->
     <div class="bush">
         <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <!-- TULIPAS -->
-    <div class="stem" style="left:85px; transform:rotate(-6deg);">
-        <div class="leaf left" style="top:50%;"></div>
-        <div class="leaf right" style="top:65%;"></div>
+    <!-- FLOR 1 -->
+    <div class="stem stem1">
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
         <div class="tulip">
             <div class="petal left"></div>
             <div class="petal center"></div>
@@ -186,8 +159,10 @@ body {
         </div>
     </div>
 
-    <div class="stem" style="left:120px;">
-        <div class="leaf left" style="top:55%;"></div>
+    <!-- FLOR 2 -->
+    <div class="stem stem2">
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
         <div class="tulip">
             <div class="petal left"></div>
             <div class="petal center"></div>
@@ -195,8 +170,10 @@ body {
         </div>
     </div>
 
-    <div class="stem" style="left:155px; transform:rotate(7deg);">
-        <div class="leaf right" style="top:60%;"></div>
+    <!-- FLOR 3 -->
+    <div class="stem stem3">
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
         <div class="tulip">
             <div class="petal left"></div>
             <div class="petal center"></div>
@@ -206,23 +183,5 @@ body {
 
 </div>
 
-<!-- CORAÇÕES -->
-<script>
-for (let i = 0; i < 14; i++) {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerText = "❤";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.bottom = "-10vh";
-    heart.style.animationDelay = Math.random() * 6 + "s";
-    heart.style.color = Math.random() > 0.5 ? "#ff6b00" : "#ff9f1c";
-    document.body.appendChild(heart);
-}
-</script>
-
 </body>
 </html>
-
-
-
-
