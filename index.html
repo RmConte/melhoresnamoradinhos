@@ -22,13 +22,19 @@ body {
     top: 5vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: clamp(1.4rem, 5vw, 2.3rem);
-    color: #ffb089;
-    font-weight: bold;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    color: #ffccb0;
+    font-weight: 600;
     text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    text-shadow:
+        0 0 8px rgba(255, 176, 137, 0.5),
+        0 0 15px rgba(255, 100, 100, 0.3);
     opacity: 0;
     animation: fadeIn 2s ease forwards;
 }
+
 
 /* JARDIM */
 .garden {
@@ -195,7 +201,11 @@ body {
 
 <body>
 
-<div class="message">Feliz 5 meses de namoro meu amor eu te amo muito, flores para minha flor 🧡🌷</div>
+<div class="message">
+    Feliz 5 meses de namoro, meu amor 💖<br>
+    Flores para a flor mais linda da minha vida 🌷✨
+</div>
+
 
 <div class="garden">
 
@@ -282,6 +292,7 @@ setInterval(createEmoji, 700);
 </script>
 </body>
 </html>
+
 
 
 
