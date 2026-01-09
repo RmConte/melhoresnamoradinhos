@@ -166,6 +166,30 @@ body {
 @keyframes pop {
     to { transform: scale(1); }
 }
+
+    /* 💖 EMOJIS FLUTUANTES */
+.emoji {
+    position: fixed;
+    bottom: -40px;
+    font-size: 24px;
+    pointer-events: none;
+    opacity: 0;
+    animation: floatUp 6s linear forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.8);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) translateX(var(--drift)) scale(1.2);
+        opacity: 0;
+    }
+}
 </style>
 </head>
 
@@ -226,6 +250,37 @@ body {
 
 </div>
 
+    <script>
+const emojis = ["💖","💗","💘","🧡","❤️","💕"];
+
+function createEmoji() {
+    const emoji = document.createElement("div");
+    emoji.className = "emoji";
+    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+    // posição horizontal aleatória
+    emoji.style.left = Math.random() * 100 + "vw";
+
+    // desvio lateral suave
+    emoji.style.setProperty("--drift",
+        (Math.random() * 100 - 50) + "px"
+    );
+
+    // tamanho variado
+    emoji.style.fontSize = (18 + Math.random() * 22) + "px";
+
+    document.body.appendChild(emoji);
+
+    // remove depois da animação
+    setTimeout(() => {
+        emoji.remove();
+    }, 6000);
+}
+
+// cria emojis continuamente
+setInterval(createEmoji, 700);
+</script>
 </body>
 </html>
+
 
