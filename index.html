@@ -34,14 +34,14 @@ body {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%) scale(1);
+    transform: translateX(-50%);
     animation: growUp 3s ease-out forwards;
 }
 
-/* RESPONSIVO */
+/* MOBILE */
 @media (max-width: 600px) {
     .garden {
-        transform: translateX(-50%) scale(0.85);
+        transform: translateX(-50%) scale(0.9);
     }
 }
 
@@ -54,8 +54,8 @@ body {
 
 .bush span {
     position: absolute;
-    width: 90px;
-    height: 90px;
+    width: 95px;
+    height: 95px;
     background: radial-gradient(circle, #4fbf8a, #1f6b47);
     border-radius: 50%;
 }
@@ -66,7 +66,7 @@ body {
 .bush span:nth-child(4){ left:150px; bottom:18px; }
 .bush span:nth-child(5){ left:190px; bottom:0; }
 
-/* PLANTAS ALTAS */
+/* PLANTAS LATERAIS */
 .tall-plant {
     position: absolute;
     bottom: 0;
@@ -77,23 +77,11 @@ body {
     transform-origin: bottom;
 }
 
-.tall-plant::after {
-    content:"";
-    position:absolute;
-    top:35%;
-    left:-22px;
-    width:44px;
-    height:16px;
-    background:#3fa46a;
-    border-radius:100% 0;
-    transform:rotate(-20deg);
-}
-
 /* CAULE */
 .stem {
     position: absolute;
     bottom: 85px;
-    width: 5px;
+    width: 6px;
     background: linear-gradient(#3cb371, #1f7a52);
     border-radius: 3px;
     transform-origin: bottom;
@@ -103,35 +91,35 @@ body {
 /* FOLHAS */
 .leaf {
     position: absolute;
-    width: 34px;
+    width: 36px;
     height: 18px;
     background: #3cb371;
     border-radius: 100% 0;
 }
 
-.leaf.left { left:-26px; transform: rotate(-25deg); }
-.leaf.right { right:-26px; transform: rotate(205deg); }
+.leaf.left { left:-28px; transform: rotate(-25deg); }
+.leaf.right { right:-28px; transform: rotate(205deg); }
 
 /* TULIPA */
 .tulip {
     position: absolute;
-    top: -70px;
+    top: -95px;
     left: 50%;
     transform: translateX(-50%);
-    width: 70px;
-    height: 70px;
+    width: 95px;
+    height: 95px;
 }
 
 .tulip .petal {
     position: absolute;
-    width: 32px;
-    height: 70px;
+    width: 42px;
+    height: 95px;
     background: #ff2b2b;
-    border-radius: 14px 14px 6px 6px;
+    border-radius: 18px 18px 8px 8px;
 }
 
 .tulip .petal.left { left:0; transform: rotate(-10deg); }
-.tulip .petal.center { left:19px; background:#ff5a5a; z-index:2; }
+.tulip .petal.center { left:26px; background:#ff5a5a; z-index:2; }
 .tulip .petal.right { right:0; transform: rotate(10deg); }
 
 /* FLORES PEQUENAS */
@@ -148,37 +136,6 @@ body {
         0 -9px #ffd966;
 }
 
-/* GRAMA */
-.grass {
-    position: absolute;
-    bottom: 0;
-    width: 4px;
-    height: 90px;
-    background: #2e8b57;
-    border-radius: 2px;
-    animation: sway 5s ease-in-out infinite alternate;
-    transform-origin: bottom;
-}
-
-/* CORAÇÕES */
-.heart {
-    position: absolute;
-    font-size: 18px;
-    animation: float 6s linear infinite;
-    opacity: 0.85;
-}
-
-/* PARTÍCULAS */
-.particle {
-    position:absolute;
-    width:4px;
-    height:4px;
-    background:#8affc1;
-    border-radius:50%;
-    opacity:0.6;
-    animation: floatUp 9s linear infinite;
-}
-
 /* ANIMAÇÕES */
 @keyframes growUp {
     from { transform: translateX(-50%) translateY(40px) scale(0.9); opacity: 0; }
@@ -186,17 +143,8 @@ body {
 }
 
 @keyframes sway {
-    from { transform: rotate(-2deg); }
-    to { transform: rotate(2deg); }
-}
-
-@keyframes float {
-    to { transform: translateY(-120vh); opacity:0; }
-}
-
-@keyframes floatUp {
-    from { transform: translateY(0); }
-    to { transform: translateY(-120vh); opacity:0; }
+    from { transform: rotate(-3deg); }
+    to { transform: rotate(3deg); }
 }
 </style>
 </head>
@@ -208,15 +156,10 @@ body {
 <div class="garden">
 
     <!-- PLANTAS LATERAIS -->
-    <div class="tall-plant" style="left:-55px; height:150px;"></div>
+    <div class="tall-plant" style="left:-50px; height:150px;"></div>
     <div class="tall-plant" style="left:-30px; height:120px;"></div>
-
-    <div class="tall-plant" style="left:260px; height:130px;"></div>
-    <div class="tall-plant" style="left:290px; height:165px;"></div>
-
-    <!-- GRAMA -->
-    <div class="grass" style="left:-60px;"></div>
-    <div class="grass" style="left:300px;"></div>
+    <div class="tall-plant" style="left:270px; height:140px;"></div>
+    <div class="tall-plant" style="left:295px; height:165px;"></div>
 
     <!-- ARBUSTO -->
     <div class="bush">
@@ -224,11 +167,11 @@ body {
     </div>
 
     <!-- FLORES PEQUENAS -->
-    <div class="small-flower" style="left:-20px; bottom:115px;"></div>
-    <div class="small-flower" style="left:250px; bottom:125px;"></div>
+    <div class="small-flower" style="left:-15px; bottom:120px;"></div>
+    <div class="small-flower" style="left:245px; bottom:130px;"></div>
 
-    <!-- TULIPAS -->
-    <div class="stem" style="left:90px; height:185px; transform:rotate(-7deg);">
+    <!-- 🌷 TULIPAS EM LEQUE (MESMA BASE) -->
+    <div class="stem" style="left:128px; height:230px; transform:rotate(-12deg);">
         <div class="leaf left" style="top:55%;"></div>
         <div class="tulip">
             <div class="petal left"></div>
@@ -237,7 +180,7 @@ body {
         </div>
     </div>
 
-    <div class="stem" style="left:130px; height:210px;">
+    <div class="stem" style="left:140px; height:260px;">
         <div class="leaf left" style="top:60%;"></div>
         <div class="leaf right" style="top:72%;"></div>
         <div class="tulip">
@@ -247,7 +190,7 @@ body {
         </div>
     </div>
 
-    <div class="stem" style="left:170px; height:185px; transform:rotate(7deg);">
+    <div class="stem" style="left:152px; height:230px; transform:rotate(12deg);">
         <div class="leaf right" style="top:55%;"></div>
         <div class="tulip">
             <div class="petal left"></div>
@@ -257,28 +200,6 @@ body {
     </div>
 
 </div>
-
-<script>
-for (let i = 0; i < 12; i++) {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerText = "❤";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.bottom = "-10vh";
-    heart.style.animationDelay = Math.random() * 6 + "s";
-    heart.style.color = Math.random() > 0.5 ? "#ff7a2f" : "#ffb089";
-    document.body.appendChild(heart);
-}
-
-for (let i = 0; i < 12; i++) {
-    const p = document.createElement("div");
-    p.className = "particle";
-    p.style.left = Math.random() * 100 + "vw";
-    p.style.bottom = Math.random() * 30 + "vh";
-    p.style.animationDelay = Math.random() * 8 + "s";
-    document.body.appendChild(p);
-}
-</script>
 
 </body>
 </html>
