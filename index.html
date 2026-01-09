@@ -57,7 +57,7 @@ body {
 .bush span:nth-child(4){ left:155px; bottom:18px; }
 .bush span:nth-child(5){ left:200px; bottom:0; }
 
-/* 🌱 CAULE PRETO (ÚNICO) */
+/* CAULES PRETOS (RISCOS) */
 .stem {
     position: absolute;
     bottom: 95px;
@@ -66,47 +66,46 @@ body {
     background: #000;
     border-radius: 10px;
     transform-origin: bottom;
-    animation: grow 2.2s ease-out forwards;
 }
 
-/* POSIÇÕES */
-.left  { left: 118px; transform: rotate(-20deg); }
-.center{ left: 132px; }
-.right { left: 146px; transform: rotate(20deg); }
-
-/* FOLHAS */
-.leaf {
-    position: absolute;
-    width: 34px;
-    height: 16px;
-    background: #3cb371;
-    border-radius: 100% 0;
+/* ESQUERDA */
+.stem.left {
+    left: 90px;
+    transform: rotate(-25deg);
 }
 
-.leaf.left  { left:-26px; transform: rotate(-25deg); }
-.leaf.right { right:-26px; transform: rotate(205deg); }
+/* CENTRO */
+.stem.center {
+    left: 125px;
+}
 
-/* 🌷 TULIPA (COLADA NO TOPO DO CAULE) */
+/* DIREITA */
+.stem.right {
+    left: 160px;
+    transform: rotate(25deg);
+}
+
+/* 🌷 TULIPA */
 .tulip {
     position: absolute;
     top: -85px;
     left: 50%;
     transform: translateX(-50%);
-    width: 85px;
-    height: 85px;
+    width: 90px;
+    height: 90px;
 }
 
 .tulip .petal {
     position: absolute;
-    width: 38px;
-    height: 85px;
+    width: 40px;
+    height: 90px;
     background: #ff2b2b;
     border-radius: 20px 20px 8px 8px;
 }
 
-.tulip .petal.left   { left:0; transform: rotate(-8deg); }
-.tulip .petal.center { left:23px; background:#ff5a5a; z-index:2; }
-.tulip .petal.right  { right:0; transform: rotate(8deg); }
+.tulip .petal.left { left:0; transform: rotate(-8deg); }
+.tulip .petal.center { left:25px; background:#ff5a5a; z-index:2; }
+.tulip .petal.right { right:0; transform: rotate(8deg); }
 
 /* FLORES PEQUENAS */
 .small-flower {
@@ -120,18 +119,6 @@ body {
         -9px 0 #ffd966,
         0 9px #ffd966,
         0 -9px #ffd966;
-}
-
-/* CRESCIMENTO */
-@keyframes grow {
-    from {
-        transform: translateY(180px) scaleY(0);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0) scaleY(1);
-        opacity: 1;
-    }
 }
 </style>
 </head>
@@ -151,36 +138,17 @@ body {
     <div class="small-flower" style="left:-20px; bottom:135px;"></div>
     <div class="small-flower" style="left:260px; bottom:145px;"></div>
 
-    <!-- ESQUERDA -->
-    <div class="stem left">
-        <div class="leaf left" style="top:55%"></div>
-        <div class="tulip">
-            <div class="petal left"></div>
-            <div class="petal center"></div>
-            <div class="petal right"></div>
-        </div>
-    </div>
-
-    <!-- CENTRO -->
+    <!-- RISCOS PRETOS -->
+    <div class="stem left"></div>
     <div class="stem center">
-        <div class="leaf left" style="top:60%"></div>
-        <div class="leaf right" style="top:72%"></div>
+        <!-- TULIPA -->
         <div class="tulip">
             <div class="petal left"></div>
             <div class="petal center"></div>
             <div class="petal right"></div>
         </div>
     </div>
-
-    <!-- DIREITA -->
-    <div class="stem right">
-        <div class="leaf right" style="top:55%"></div>
-        <div class="tulip">
-            <div class="petal left"></div>
-            <div class="petal center"></div>
-            <div class="petal right"></div>
-        </div>
-    </div>
+    <div class="stem right"></div>
 
 </div>
 
