@@ -103,6 +103,77 @@ body {
 .tulip .petal.center { left:19px; background:#ff4444; z-index:2; }  /* Mudado para um vermelho mais claro */
 .tulip .petal.right { right:0; transform: rotate(10deg); }
 
+/* 🌼 MARGARIDA */
+.daisy {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+}
+
+.daisy .petal {
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 10px 10px 5px 5px;
+}
+
+.daisy .petal:nth-child(1) { top: 0; left: 20px; transform: rotate(0deg); }
+.daisy .petal:nth-child(2) { top: 5px; left: 35px; transform: rotate(45deg); }
+.daisy .petal:nth-child(3) { top: 20px; left: 40px; transform: rotate(90deg); }
+.daisy .petal:nth-child(4) { top: 35px; left: 35px; transform: rotate(135deg); }
+.daisy .petal:nth-child(5) { top: 40px; left: 20px; transform: rotate(180deg); }
+.daisy .petal:nth-child(6) { top: 35px; left: 5px; transform: rotate(225deg); }
+.daisy .petal:nth-child(7) { top: 20px; left: 0; transform: rotate(270deg); }
+.daisy .petal:nth-child(8) { top: 5px; left: 5px; transform: rotate(315deg); }
+
+.daisy .center {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    background: #ffff00;
+    border-radius: 50%;
+}
+
+/* 🌸 ROSA */
+.rose {
+    position: absolute;
+    top: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 65px;
+}
+
+.rose .petal {
+    position: absolute;
+    width: 25px;
+    height: 50px;
+    background: #ff69b4;
+    border-radius: 12px 12px 6px 6px;
+}
+
+.rose .petal:nth-child(1) { left: 12px; transform: rotate(-15deg); }
+.rose .petal:nth-child(2) { left: 12px; transform: rotate(15deg); }
+.rose .petal:nth-child(3) { left: 12px; top: 10px; transform: rotate(0deg); }
+.rose .petal:nth-child(4) { left: 12px; top: 15px; transform: rotate(-10deg); }
+.rose .petal:nth-child(5) { left: 12px; top: 15px; transform: rotate(10deg); }
+
+.rose .center {
+    position: absolute;
+    top: 35px;
+    left: 17px;
+    width: 16px;
+    height: 16px;
+    background: #ffff00;
+    border-radius: 50%;
+}
+
 /* GRAMA */
 .grass {
     position: absolute;
@@ -162,6 +233,36 @@ body {
         <span></span><span></span><span></span><span></span><span></span>
     </div>
 
+    <!-- PLANTAS ADICIONAIS -->
+    <!-- Margarida à esquerda -->
+    <div class="stem" style="left:30px; transform:rotate(-10deg);">
+        <div class="leaf left" style="top:50%;"></div>
+        <div class="daisy">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+    </div>
+
+    <!-- Rosa à esquerda -->
+    <div class="stem" style="left:50px; transform:rotate(5deg);">
+        <div class="leaf right" style="top:55%;"></div>
+        <div class="rose">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+    </div>
+
     <!-- TULIPAS -->
     <div class="stem" style="left:75px; transform:rotate(-6deg);">
         <div class="leaf left" style="top:50%;"></div>
@@ -188,6 +289,35 @@ body {
             <div class="petal left"></div>
             <div class="petal center"></div>
             <div class="petal right"></div>
+        </div>
+    </div>
+
+    <!-- Margarida à direita -->
+    <div class="stem" style="left:200px; transform:rotate(10deg);">
+        <div class="leaf left" style="top:50%;"></div>
+        <div class="daisy">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+    </div>
+
+    <!-- Rosa à direita -->
+    <div class="stem" style="left:230px; transform:rotate(-5deg);">
+        <div class="leaf right" style="top:55%;"></div>
+        <div class="rose">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
         </div>
     </div>
 
