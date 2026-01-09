@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Feliz 5 meses</title>
 
 <style>
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -23,10 +23,10 @@ body {
 /* TEXTO */
 .message {
     position: absolute;
-    top: 40px;
+    top: 30px;
     width: 100%;
     text-align: center;
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
     color: #ff8c5a;
     font-weight: bold;
 }
@@ -35,49 +35,30 @@ body {
 .garden {
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
+    width: 100%;
     height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
-/* ARBUSTO */
-.bush {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+/* CONJUNTO FLORES */
+.flowers {
+    position: relative;
+    display: flex;
+    gap: 40px; /* CONTROLA O ESPAÇO ENTRE AS FLORES */
+    align-items: flex-end;
+    z-index: 2;
 }
-
-.bush span {
-    position: absolute;
-    bottom: 0;
-    width: 90px;
-    height: 80px;
-    background: radial-gradient(circle, #3fa36b, #1f6b45);
-    border-radius: 50%;
-}
-
-.bush span:nth-child(1) { left: -90px; }
-.bush span:nth-child(2) { left: -45px; }
-.bush span:nth-child(3) { left: 0; }
-.bush span:nth-child(4) { left: 45px; }
-.bush span:nth-child(5) { left: 90px; }
 
 /* CAULE */
 .stem {
-    position: absolute;
-    bottom: 80px;
+    position: relative;
     width: 6px;
     height: 200px;
     background: linear-gradient(#4cd48b, #1f7a52);
     border-radius: 3px;
 }
-
-/* ESPAÇAMENTO ENTRE FLORES */
-.stem1 { left: 60px; }
-.stem2 { left: 135px; }
-.stem3 { left: 210px; }
 
 /* FOLHAS */
 .leaf {
@@ -86,7 +67,7 @@ body {
     height: 16px;
     background: #3cb371;
     border-radius: 100% 0;
-    top: 120px;
+    top: 110px;
 }
 
 .leaf.left {
@@ -102,7 +83,7 @@ body {
 /* TULIPA */
 .tulip {
     position: absolute;
-    top: -90px;
+    top: -95px;
     left: 50%;
     transform: translateX(-50%);
     width: 80px;
@@ -132,13 +113,30 @@ body {
     right: 0;
     transform: rotate(10deg);
 }
+
+/* ARBUSTO */
+.bush {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.bush span {
+    width: 90px;
+    height: 80px;
+    background: radial-gradient(circle, #3fa36b, #1f6b45);
+    border-radius: 50%;
+    margin: 0 -20px;
+}
 </style>
 </head>
 
 <body>
 
 <div class="message">
-    Feliz 5 meses de namoro meu amor eu te amo muito, flores para minha flor❤️🌷
+    Feliz 5 meses de namoro ❤️🌷
 </div>
 
 <div class="garden">
@@ -148,39 +146,40 @@ body {
         <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <!-- FLOR 1 -->
-    <div class="stem stem1">
-        <div class="leaf left"></div>
-        <div class="leaf right"></div>
-        <div class="tulip">
-            <div class="petal left"></div>
-            <div class="petal center"></div>
-            <div class="petal right"></div>
-        </div>
-    </div>
+    <!-- FLORES -->
+    <div class="flowers">
 
-    <!-- FLOR 2 -->
-    <div class="stem stem2">
-        <div class="leaf left"></div>
-        <div class="leaf right"></div>
-        <div class="tulip">
-            <div class="petal left"></div>
-            <div class="petal center"></div>
-            <div class="petal right"></div>
+        <div class="stem">
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+            <div class="tulip">
+                <div class="petal left"></div>
+                <div class="petal center"></div>
+                <div class="petal right"></div>
+            </div>
         </div>
-    </div>
 
-    <!-- FLOR 3 -->
-    <div class="stem stem3">
-        <div class="leaf left"></div>
-        <div class="leaf right"></div>
-        <div class="tulip">
-            <div class="petal left"></div>
-            <div class="petal center"></div>
-            <div class="petal right"></div>
+        <div class="stem">
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+            <div class="tulip">
+                <div class="petal left"></div>
+                <div class="petal center"></div>
+                <div class="petal right"></div>
+            </div>
         </div>
-    </div>
 
+        <div class="stem">
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+            <div class="tulip">
+                <div class="petal left"></div>
+                <div class="petal center"></div>
+                <div class="petal right"></div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 </body>
