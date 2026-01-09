@@ -26,6 +26,7 @@ body {
     color: #ffb089;
     font-weight: bold;
     text-align: center;
+    animation: fadeIn 2s ease forwards;
 }
 
 /* JARDIM */
@@ -36,11 +37,32 @@ body {
     transform: translateX(-50%);
 }
 
+/* 🌱 ANIMAÇÃO DE CRESCIMENTO */
+@keyframes growUp {
+    from {
+        transform: scaleY(0) translateY(80px);
+        opacity: 0;
+    }
+    to {
+        transform: scaleY(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 🌬️ BALANÇO */
+@keyframes sway {
+    0%   { transform: rotate(-1.5deg); }
+    50%  { transform: rotate(1.5deg); }
+    100% { transform: rotate(-1.5deg); }
+}
+
 /* ARBUSTO */
 .bush {
     position: relative;
     width: 260px;
     height: 120px;
+    transform-origin: bottom;
+    animation: growUp 1.6s ease-out forwards;
 }
 
 .bush span {
@@ -49,15 +71,17 @@ body {
     height: 95px;
     background: radial-gradient(circle, #4fbf8a, #1f6b47);
     border-radius: 50%;
+    opacity: 0;
+    animation: growUp 1.4s ease forwards;
 }
 
-.bush span:nth-child(1){ left:0; bottom:0; }
-.bush span:nth-child(2){ left:45px; bottom:15px; }
-.bush span:nth-child(3){ left:100px; bottom:5px; }
-.bush span:nth-child(4){ left:155px; bottom:18px; }
-.bush span:nth-child(5){ left:200px; bottom:0; }
+.bush span:nth-child(1){ left:0; bottom:0; animation-delay:.2s; }
+.bush span:nth-child(2){ left:45px; bottom:15px; animation-delay:.3s; }
+.bush span:nth-child(3){ left:100px; bottom:5px; animation-delay:.4s; }
+.bush span:nth-child(4){ left:155px; bottom:18px; animation-delay:.5s; }
+.bush span:nth-child(5){ left:200px; bottom:0; animation-delay:.6s; }
 
-/* 🌿 CAULE VERDE */
+/* 🌿 CAULE */
 .stem {
     position: absolute;
     bottom: 95px;
@@ -66,12 +90,15 @@ body {
     background: linear-gradient(to top, #1f6b47, #4fbf8a);
     border-radius: 10px;
     transform-origin: bottom;
+    animation:
+        growUp 1.6s ease forwards,
+        sway 5s ease-in-out infinite;
 }
 
 /* VARIAÇÕES */
-.stem.left  { left: 95px;  transform: rotate(-25deg); }
-.stem.center{ left: 125px; }
-.stem.right { left: 155px; transform: rotate(25deg); }
+.stem.left  { left: 95px;  transform: rotate(-25deg); animation-delay:.8s; }
+.stem.center{ left: 125px; animation-delay:1s; }
+.stem.right { left: 155px; transform: rotate(25deg); animation-delay:1.2s; }
 
 /* 🍃 FOLHAS */
 .leaf {
@@ -80,6 +107,8 @@ body {
     height: 18px;
     background: linear-gradient(to right, #3fae73, #1f6b47);
     border-radius: 100% 0 100% 0;
+    opacity: 0;
+    animation: growUp 1.2s ease forwards;
 }
 
 .leaf.left {
@@ -92,18 +121,23 @@ body {
     transform: rotate(155deg);
 }
 
-.leaf.one { top: 60px; }
-.leaf.two { top: 120px; }
-.leaf.three { top: 180px; }
+.leaf.one   { top: 60px; animation-delay:1.4s; }
+.leaf.two   { top: 120px; animation-delay:1.6s; }
+.leaf.three { top: 180px; animation-delay:1.8s; }
 
 /* 🌷 TULIPA */
 .tulip {
     position: absolute;
     top: -90px;
-    left: 20%;
+    left: 50%;
     transform: translateX(-50%);
     width: 90px;
     height: 90px;
+    opacity: 0;
+    animation:
+        growUp 1.4s ease forwards,
+        sway 4s ease-in-out infinite;
+    animation-delay: 2s;
 }
 
 .tulip .petal {
@@ -130,6 +164,17 @@ body {
         -9px 0 #ffd966,
         0 9px #ffd966,
         0 -9px #ffd966;
+    opacity: 0;
+    animation: growUp 1s ease forwards;
+}
+
+.small-flower:nth-of-type(1){ animation-delay:1.2s; }
+.small-flower:nth-of-type(2){ animation-delay:1.4s; }
+
+/* TEXTO */
+@keyframes fadeIn {
+    from { opacity:0; transform: translate(-50%, -20px); }
+    to   { opacity:1; transform: translate(-50%, 0); }
 }
 </style>
 </head>
@@ -149,7 +194,7 @@ body {
     <div class="small-flower" style="left:-20px; bottom:135px;"></div>
     <div class="small-flower" style="left:260px; bottom:145px;"></div>
 
-    <!-- 🌷 CAULE ESQUERDA -->
+    <!-- CAULE ESQUERDA -->
     <div class="stem left">
         <div class="leaf left one"></div>
         <div class="leaf right two"></div>
@@ -161,7 +206,7 @@ body {
         </div>
     </div>
 
-    <!-- 🌷 CAULE CENTRO -->
+    <!-- CAULE CENTRO -->
     <div class="stem center">
         <div class="leaf left one"></div>
         <div class="leaf right three"></div>
@@ -173,7 +218,7 @@ body {
         </div>
     </div>
 
-    <!-- 🌷 CAULE DIREITA -->
+    <!-- CAULE DIREITA -->
     <div class="stem right">
         <div class="leaf right two"></div>
         <div class="leaf left three"></div>
@@ -189,4 +234,3 @@ body {
 
 </body>
 </html>
-
