@@ -57,13 +57,13 @@ body {
 .bush span:nth-child(4){ left:155px; bottom:18px; }
 .bush span:nth-child(5){ left:200px; bottom:0; }
 
-/* CAULE PRETO */
+/* 🌿 CAULE VERDE */
 .stem {
     position: absolute;
     bottom: 95px;
     width: 12px;
     height: 260px;
-    background: #000;
+    background: linear-gradient(to top, #1f6b47, #4fbf8a);
     border-radius: 10px;
     transform-origin: bottom;
 }
@@ -72,6 +72,29 @@ body {
 .stem.left  { left: 95px;  transform: rotate(-25deg); }
 .stem.center{ left: 125px; }
 .stem.right { left: 155px; transform: rotate(25deg); }
+
+/* 🍃 FOLHAS */
+.leaf {
+    position: absolute;
+    width: 35px;
+    height: 18px;
+    background: linear-gradient(to right, #3fae73, #1f6b47);
+    border-radius: 100% 0 100% 0;
+}
+
+.leaf.left {
+    left: -30px;
+    transform: rotate(-25deg);
+}
+
+.leaf.right {
+    right: -30px;
+    transform: rotate(155deg);
+}
+
+.leaf.one { top: 60px; }
+.leaf.two { top: 120px; }
+.leaf.three { top: 180px; }
 
 /* 🌷 TULIPA */
 .tulip {
@@ -126,8 +149,11 @@ body {
     <div class="small-flower" style="left:-20px; bottom:135px;"></div>
     <div class="small-flower" style="left:260px; bottom:145px;"></div>
 
-    <!-- CAULE + FLOR ESQUERDA -->
+    <!-- 🌷 CAULE ESQUERDA -->
     <div class="stem left">
+        <div class="leaf left one"></div>
+        <div class="leaf right two"></div>
+
         <div class="tulip">
             <div class="petal left"></div>
             <div class="petal center"></div>
@@ -135,8 +161,11 @@ body {
         </div>
     </div>
 
-    <!-- CAULE + FLOR CENTRO -->
+    <!-- 🌷 CAULE CENTRO -->
     <div class="stem center">
+        <div class="leaf left one"></div>
+        <div class="leaf right three"></div>
+
         <div class="tulip">
             <div class="petal left"></div>
             <div class="petal center"></div>
@@ -144,8 +173,11 @@ body {
         </div>
     </div>
 
-    <!-- CAULE + FLOR DIREITA -->
+    <!-- 🌷 CAULE DIREITA -->
     <div class="stem right">
+        <div class="leaf right two"></div>
+        <div class="leaf left three"></div>
+
         <div class="tulip">
             <div class="petal left"></div>
             <div class="petal center"></div>
