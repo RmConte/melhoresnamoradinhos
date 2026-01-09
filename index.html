@@ -26,7 +26,6 @@ body {
     color: #ffb089;
     font-weight: bold;
     text-align: center;
-    z-index: 10;
 }
 
 /* JARDIM */
@@ -35,7 +34,6 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    animation: growUp 3s ease-out forwards;
 }
 
 /* MOBILE */
@@ -66,22 +64,12 @@ body {
 .bush span:nth-child(4){ left:150px; bottom:18px; }
 .bush span:nth-child(5){ left:190px; bottom:0; }
 
-/* PLANTAS LATERAIS */
-.tall-plant {
-    position: absolute;
-    bottom: 0;
-    width: 5px;
-    background: linear-gradient(#4caf8b, #1f6b47);
-    border-radius: 3px;
-    animation: sway 6s ease-in-out infinite alternate;
-    transform-origin: bottom;
-}
-
 /* CAULE */
 .stem {
     position: absolute;
     bottom: 85px;
     width: 6px;
+    height: 250px;
     background: linear-gradient(#3cb371, #1f7a52);
     border-radius: 3px;
     transform-origin: bottom;
@@ -100,12 +88,10 @@ body {
 .leaf.left { left:-28px; transform: rotate(-25deg); }
 .leaf.right { right:-28px; transform: rotate(205deg); }
 
-/* TULIPA */
+/* 🌷 TULIPA */
 .tulip {
     position: absolute;
     top: -95px;
-    left: 50%;
-    transform: translateX(-50%);
     width: 95px;
     height: 95px;
 }
@@ -137,11 +123,6 @@ body {
 }
 
 /* ANIMAÇÕES */
-@keyframes growUp {
-    from { transform: translateX(-50%) translateY(40px) scale(0.9); opacity: 0; }
-    to { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
-}
-
 @keyframes sway {
     from { transform: rotate(-3deg); }
     to { transform: rotate(3deg); }
@@ -155,12 +136,6 @@ body {
 
 <div class="garden">
 
-    <!-- PLANTAS LATERAIS -->
-    <div class="tall-plant" style="left:-50px; height:150px;"></div>
-    <div class="tall-plant" style="left:-30px; height:120px;"></div>
-    <div class="tall-plant" style="left:270px; height:140px;"></div>
-    <div class="tall-plant" style="left:295px; height:165px;"></div>
-
     <!-- ARBUSTO -->
     <div class="bush">
         <span></span><span></span><span></span><span></span><span></span>
@@ -170,29 +145,33 @@ body {
     <div class="small-flower" style="left:-15px; bottom:120px;"></div>
     <div class="small-flower" style="left:245px; bottom:130px;"></div>
 
-    <!-- 🌷 TULIPAS EM LEQUE (MESMA BASE) -->
-    <div class="stem" style="left:128px; height:230px; transform:rotate(-12deg);">
+    <!-- 🌷 TULIPAS EM LEQUE (CORRIGIDO) -->
+
+    <!-- ESQUERDA -->
+    <div class="stem" style="left:130px; transform:rotate(-12deg);">
         <div class="leaf left" style="top:55%;"></div>
-        <div class="tulip">
+        <div class="tulip" style="left:-28px;">
             <div class="petal left"></div>
             <div class="petal center"></div>
             <div class="petal right"></div>
         </div>
     </div>
 
-    <div class="stem" style="left:140px; height:260px;">
+    <!-- CENTRO -->
+    <div class="stem" style="left:140px;">
         <div class="leaf left" style="top:60%;"></div>
         <div class="leaf right" style="top:72%;"></div>
-        <div class="tulip">
+        <div class="tulip" style="left:-47px;">
             <div class="petal left"></div>
             <div class="petal center"></div>
             <div class="petal right"></div>
         </div>
     </div>
 
-    <div class="stem" style="left:152px; height:230px; transform:rotate(12deg);">
+    <!-- DIREITA -->
+    <div class="stem" style="left:150px; transform:rotate(12deg);">
         <div class="leaf right" style="top:55%;"></div>
-        <div class="tulip">
+        <div class="tulip" style="left:-66px;">
             <div class="petal left"></div>
             <div class="petal center"></div>
             <div class="petal right"></div>
